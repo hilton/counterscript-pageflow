@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow-definition name="counterscript">
+
+	<start-page name="who" view-id="/who.xhtml">
+        <transition name="proceed" to="name">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="cancel" to="cancel"/>
+	</start-page>
+<!--
+	Alternative to start-page: start-state requires @Begin on start() method
+	
+	<start-state>
+        <transition to="who"/>
+	</start-state>
+
+	<page name="who" view-id="/who.xhtml">
+        <transition name="proceed" to="name">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="cancel" to="cancel"/>
+	</page>
+-->	
+
+	<page name="cancel" view-id="/home.xhtml">
+	    <redirect/>
+	    <end-conversation before-redirect="true"/>
+    </page>
+
+    <page name="name" view-id="/name.xhtml">
+        <transition name="proceed" to="number">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+		<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="number" view-id="/number.xhtml">
+        <transition name="proceed" to="fulltime">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="fulltime" view-id="/fulltime.xhtml">
+        <transition name="left" to="residence">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="right" to="living">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="living" view-id="/living.xhtml">
+        <transition name="left" to="residence">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="middle" to="study">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="right" to="exactly">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="study" view-id="/study.xhtml">
+        <transition name="proceed" to="neighbour">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="exactly" view-id="/what-exactly.xhtml">
+        <transition name="proceed" to="neighbour">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="neighbour" view-id="/neighbour.xhtml">
+        <transition name="proceed" to="residence">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+    
+    <page name="residence" view-id="/residence.xhtml">
+        <transition name="left" to="incredible">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="right" to="nice">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="incredible" view-id="/incredible.xhtml">
+        <transition name="proceed" to="telemarketing">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="nice" view-id="/nice.xhtml">
+        <transition name="proceed" to="telemarketing">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="telemarketing" view-id="/telemarketing.xhtml">
+        <transition name="left" to="not-long">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="right" to="quite-long">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="not-long" view-id="/not-long.xhtml">
+        <transition name="proceed" to="like">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="quite-long" view-id="/quite-long.xhtml">
+        <transition name="proceed" to="like">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="like" view-id="/like.xhtml">
+        <transition name="left" to="why">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+        <transition name="right" to="would-like">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="why" view-id="/why.xhtml">
+        <transition name="proceed" to="earn">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="would-like" view-id="/would-like.xhtml">
+        <transition name="proceed" to="earn">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="earn" view-id="/earn.xhtml">
+        <transition name="proceed" to="not-bad">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="not-bad" view-id="/not-bad.xhtml">
+        <transition name="proceed" to="teeth">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="teeth" view-id="/teeth.xhtml">
+        <transition name="proceed" to="toothpaste">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="toothpaste" view-id="/toothpaste.xhtml">
+        <transition name="proceed" to="information">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="information" view-id="/information.xhtml">
+        <transition name="proceed" to="thank-you">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+    <page name="thank-you" view-id="/thank-you.xhtml">
+        <transition name="proceed" to="finish">
+        	<action expression="#{wizard.proceed()}"/>
+        </transition>
+    	<transition name="cancel" to="cancel"/>
+    </page>
+
+	<page name="finish" view-id="/home.xhtml">
+	    <redirect/>
+	    <end-conversation before-redirect="true"/>
+    </page>
+
+
+</pageflow-definition>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="counterscript" default="reload" basedir=".">
+
+    <property name="seam.home" value="/Volumes/Backup/lib/jboss-seam-2.2.0.GA" />
+    <property name="tomcat.home" value="/Applications/apache-tomcat-6.0.29" />
+    <property name="tomcat.deploy" value="${tomcat.home}/webapps" />
+	<property name="war" value="${tomcat.deploy}/${ant.project.name}" />
+	
+    <target name="clean-deploy" depends="undeploy, deploy" description="Undeploy, then deploy the WAR structure"/>
+    	
+    <target name="deploy" description="Deploy the WAR structure">
+
+        <copy todir="${war}">
+            <fileset dir="${basedir}/war" />
+        </copy>
+        <copy todir="${war}/WEB-INF/classes">
+            <fileset dir="${basedir}/bin" includes="**/*.class"/>
+        </copy>
+        <copy todir="${war}/WEB-INF/lib">
+            <fileset dir="${tomcat.home}/webapps/examples/WEB-INF/lib" includes="jstl.jar" />
+            <fileset dir="${seam.home}/lib">
+            	<include name="dom4j.jar"/>
+            	<include name="commons-beanutils.jar"/>
+                <include name="commons-digester.jar"/>
+                <include name="commons-logging.jar"/>
+
+            	<include name="hibernate-core.jar"/>
+            	<include name="hibernate-validator.jar"/>
+            	
+            	<include name="javassist.jar"/>
+            	
+            	<include name="jboss-el.jar"/>
+            	<include name="jboss-seam-debug.jar"/>
+            	<include name="jboss-seam-ui.jar"/>
+            	<include name="jboss-seam.jar"/>
+            	<include name="jbpm-jpdl.jar"/>
+            	
+            	<include name="jsf-api.jar"/>
+            	<include name="jsf-facelets.jar"/>
+            	<include name="jsf-impl.jar"/>
+                <include name="jstl.jar"/>
+                
+            	<include name="jta.jar"/>
+            	<include name="persistence-api.jar"/>
+            </fileset>
+        </copy>
+
+    </target>
+
+    <target name="reload" depends="deploy" description="Restart the app">
+		<touch file="${war}/WEB-INF/web.xml"/>
+    </target>
+
+    <target name="undeploy" description="Remove the app">
+		<delete dir="${war}"/>
+    </target>
+
+</project>

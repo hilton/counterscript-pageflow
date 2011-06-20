@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="theme/template.xhtml">
+
+<ui:define name="body">
+
+	<div class="question">
+		<p><em>What else do you do for a living?</em></p>
+		<p>
+			<s:link action="left">I am a housewife/houseman</s:link>
+			<s:link action="middle">I study</s:link>
+			<s:link action="right">I have another job</s:link>
+			<s:link action="cancel" styleClass="cancel">Cancel</s:link>
+		</p>
+	</div>
+
+</ui:define>
+
+</ui:composition>

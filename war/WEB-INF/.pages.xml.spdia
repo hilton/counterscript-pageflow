@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram model-entity="SeamPagesDiagram">
+ <item ID="#*" NAME="#x*" PATH="/*" SHAPE="24,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/home.xhtml" NAME="output" PATH="/home.xhtml"
+   TARGET="#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#home.xhtml" NAME="#xhome.xhtml" PATH="/home.xhtml"
+  SHAPE="344,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/who.xhtml" NAME="output" PATH="/who.xhtml"
+   TARGET="#xwho.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item NAME="#xwho.xhtml" PATH="/who.xhtml" SHAPE="24,121,0,0"
+  TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/*" NAME="output" PATH="/*" TARGET="#x*" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+</diagram>

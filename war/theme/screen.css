@@ -1,0 +1,41 @@
+body {
+    background-color: #CC9;
+    margin: 100px auto;
+    width: 694px;
+    text-align: center;
+    font-family: Courier;
+    font-size: 120%;
+}
+
+h1 {
+	font-size: 100%;
+}
+
+div.question p {
+    margin: 4em 0;
+    font-family: "Helvetica Neue", sans-serif;
+    line-height: 1.6em;
+}
+
+div.question em, div.question a {
+    margin: 0 0.5em;
+}
+
+div.question em {
+    padding: 0.3em 0.5em;
+    font-style: normal;
+    color: white;
+    background: black;
+}
+
+div.question a {
+    padding: 0.2em 0.5em;
+    text-decoration: none;
+    color: black;
+    background: white;
+    border: 2px solid black;
+}
+
+div.question a.cancel {
+    background-color: #C42600;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="theme/template.xhtml">
+
+<ui:define name="body">
+
+	<div class="question">
+		<p><em>And how long have you been in the telemarketing business?</em></p>
+		<p>
+			<s:link action="left">0-5 months</s:link>
+			<s:link action="right">5 &gt; months</s:link>
+			<s:link action="cancel" styleClass="cancel">Cancel</s:link>
+		</p>
+	</div>
+
+</ui:define>
+
+</ui:composition>

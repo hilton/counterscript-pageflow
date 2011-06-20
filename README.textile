@@ -1,0 +1,3 @@
+A minimal JBoss Seam 2.2 web application that runs on Tomcat, written as a counter-example to the bloat that is often used as a Seam application skeleton, that uses Seam Page flow to define the page navigation rules.
+
+The example is based on the excellent "Counter-Script":http://www.xs4all.nl/~egbg/counterscript.html by Martijn Engelbregt.

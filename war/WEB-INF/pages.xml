@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd">
+
+    <page view-id="/*">
+        <navigation from-action="cancel">
+			<end-conversation before-redirect="true" />    	
+            <redirect view-id="/home.xhtml"/>
+        </navigation>
+    </page>
+    
+    <page view-id="/home.xhtml">
+        <navigation from-action="#{wizard.start()}">
+	        <!--
+	        	Alternative way to start page-flow:
+	        	comment-out begin-conversation and use @Begin instead
+	         -->
+			<begin-conversation pageflow="counterscript"/>    	
+            <redirect view-id="/who.xhtml"/>
+        </navigation>
+    </page>
+
+</pages>
